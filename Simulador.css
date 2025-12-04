@@ -10,43 +10,122 @@ body {
 }
 
 .caixa {
-    width: 500px;          /* largura da caixa */
-    height: 800px;         /* altura da caixa */
-    background-color:#005B54; /* cor interna da caixa */
-    border-radius: 20px;   /* bordas arredondadas */
-    margin: 50px auto;     /* centraliza na tela */
-    padding: 20px;         /* espaço interno */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* sombra */
+    width: 500px;
+    height: 800px;
+    background-color:#005B54;
+    border-radius: 20px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
 
+.cabeçalho {
+    text-align: center;
+    color: #BEE631;
 }
 
 h2 {
-    margin-top: 20px;
-    text-align: center;
     font-size: 35px;
-    color:#BAE02D;
+    margin-bottom: 7px;
+    margin-top: 15px;
 }
 
-.h2 {
+.valor-desejado {
+    margin-top: 25px;
+}
+
+.valor-desejado p {
     font-size: 18px;
-    margin-left: 35px;
-    margin-top: 10px;
-    color: #C7E37A;
+    color: #D6EAAF;
+    margin-bottom: 10px;
 }
 
-.Valor {
-    margin-top: 20px;
-    margin-left: 35px;
-    font-size: 20px;
-    color: #C7E37A;
-}
-
-input {
-    font-size: 20px;
-    width: 400px;
-    height: 40px;
-    margin-left: 35px;
-    margin-top: 10px;
+.input {
+    font-size: 18px;
+    padding-left: 15px;
+    display: block;
+    margin-bottom: 10px;
+    width: 90%;
+    height: 45px;
     border: none;
     border-radius: 5px;
+}
+
+.range-valor {
+    width: 75%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.range-prazo {
+    width: 90%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+span {
+    font-size: 15px;
+    color: #BEE631;
+    margin-left: 5px;
+}
+
+.prazo {
+    margin-top: 18px;
+}
+
+.prazo p {
+    font-size: 18px;
+    color: #D6EAAF;
+    margin-bottom: 10px;
+}
+
+.result{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #D6EAAF;
+}
+
+.result-final {
+    font-size:18px;
+    color: #BEE631;
+}
+
+.aviso {
+    margin: 20px 30px;
+    font-size: 12px;
+    color: #BEE631;
+    width: 400px;
+    text-align: center;
+}
+button {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    height: 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.continuar {
+    background-color: #BEE631;
+    border: none;
+    font-size: 18px;
+    color: #01625C;
+    font-weight: 600;
+}
+
+.atendente {
+    background-color:#005B54;
+    font-size: 18px;
+    color: #BEE631;
+    border-color: #BEE631;
+    border: 1px solid;
+    font-weight: 600;
+}
+
+button:active {
+  opacity: 0.6;
+  transform: scale(0.97);
 }

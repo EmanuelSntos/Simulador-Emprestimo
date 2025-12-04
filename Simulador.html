@@ -10,12 +10,31 @@
 
 <body>
     <div class="caixa">
-        <h2>Simule seu empréstimo</h2>
-        <p class="h2">Veja em segundos quanto ficaria suas parcelas!</p>
-        <p class="Valor">Valor desejado</p>
-        <input type="text">
-        <input type="range">
-
+        <div class="cabeçalho">
+            <h2>Simule seu empréstimo</h2>
+            <p>Veja em segundos quanto ficaria suas parcelas!</p>
+        </div>
+        <div class="valor-desejado">
+            <p class="valor">Valor desejado</p>
+            <input class="input" type="text" value="R$ 5.000,00" readonly>
+            <input class="range-valor" type="range">
+            <span>R$ 50.000,00</span>
+        </div>
+        <div class="prazo">
+            <p>Prazo</p>
+            <input class="input" type="text" value="18x R$450,00" readonly>
+            <input class="range-prazo" type="range">
+            <span>36</span>
+        </div>
+        <div class="text-result">
+            <p class="result">Resultado da simulação</p>
+            <p class="result-final">Parcelas Estimadas:</p> <br>
+            <p class="result-final">Valor Desejado:</p> <br>
+            <p class="aviso">* Esta é uma simulação. O valor final depende de analise de crédito
+                e pode variar de acordo com o seu perfil.</p>
+        </div>
+        <button class="continuar">CONTINUAR COM ESSA SIMULAÇÃO</button>
+        <button class="atendente">FALAR COM UM ATENDENTE</button>
     </div>
 
 </body>
