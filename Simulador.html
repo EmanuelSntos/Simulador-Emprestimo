@@ -16,26 +16,82 @@
         </div>
         <div class="valor-desejado">
             <p class="valor">Valor desejado</p>
-            <input class="input" type="text" value="R$ 5.000,00" readonly>
-            <input class="range-valor" type="range">
+            <input class="input" type="text" readonly>
+            <input class="range-valor" type="range" min="100" max="50000" step="100" value="1000">
             <span>R$ 50.000,00</span>
         </div>
         <div class="prazo">
             <p>Prazo</p>
-            <input class="input" type="text" value="18x R$450,00" readonly>
-            <input class="range-prazo" type="range">
-            <span>36</span>
+            <input class="input" type="text" readonly>
+            <input class="range-prazo" type="range" min="3" max="36" step="1" value="5">
+            <span>36 Meses</span>
         </div>
         <div class="text-result">
             <p class="result">Resultado da simulação</p>
-            <p class="result-final">Parcelas Estimadas:</p> <br>
-            <p class="result-final">Valor Desejado:</p> <br>
-            <p class="aviso">* Esta é uma simulação. O valor final depende de analise de crédito
-                e pode variar de acordo com o seu perfil.</p>
+            <p class="result-final">
+                Parcelas Estimadas:
+                <span id="parcelas"></span>
+            </p> <br>
+            <p class="result-final">
+                Valor Desejado:
+                <span id="valorDesejado"></span>
+            </p> <br>
+            <p class="aviso">
+                * Esta é uma simulação. O valor final depende de analise de crédito
+                e pode variar de acordo com o seu perfil.
+            </p>
         </div>
         <button class="continuar">CONTINUAR COM ESSA SIMULAÇÃO</button>
         <button class="atendente">FALAR COM UM ATENDENTE</button>
     </div>
+
+    <script>
+        const rangeValor = document.querySelector(".range-valor");
+        const textoValor = document.querySelectorAll(".input")[0];
+        const rangePrazo = document.querySelector(".range-prazo");
+        const textoPrazo = document.querySelectorAll(".input")[1];
+
+        const campoParcelas = document.getElementById("parcelas");
+        const campoValorDesejado = document.getElementById("valorDesejado");
+
+        function formatarMoeda(valor) {
+            return valor.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL"
+            });
+        }
+
+        // ----------- CÁLCULO DE PARCELAS COM JUROS DE 6% (TABELA PRICE) -----------
+        function calcularParcelas(valor, prazo) {
+            const juros = 0.06; // 6% ao mês
+
+            const parcela = valor * (juros * Math.pow(1 + juros, prazo)) /
+                (Math.pow(1 + juros, prazo) - 1);
+
+            return parcela;
+        }
+
+        function atualizarResultados() {
+            const valor = Number(rangeValor.value);
+            const prazo = Number(rangePrazo.value);
+
+            // Atualiza campos visuais
+            textoValor.value = formatarMoeda(valor);
+            textoPrazo.value = prazo + " meses";
+            campoValorDesejado.textContent = formatarMoeda(valor);
+
+            // Calcula parcelas
+            const valorParcela = calcularParcelas(valor, prazo);
+            campoParcelas.textContent = `${prazo}x de ${formatarMoeda(valorParcela)}`;
+        }
+
+        // Eventos
+        rangeValor.addEventListener("input", atualizarResultados);
+        rangePrazo.addEventListener("input", atualizarResultados);
+
+        // Inicialização
+        atualizarResultados();
+    </script>
 
 </body>
 
