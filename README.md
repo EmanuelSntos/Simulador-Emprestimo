@@ -7,9 +7,9 @@ Desenvolvido para fins educacionais.
 - Deploy: https://emanuelsntos.github.io/Simulador-Emprestimo/
 
 ## 🧠 Tecnologias
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
+- HTML
+- CSS
+- JavaScript
 
 ## ✅ Funcionalidades
 - Ajuste de valor e prazo via sliders
@@ -17,8 +17,8 @@ Desenvolvido para fins educacionais.
 - Simulação com **Tabela Price** e **juros fixos de 6% ao mês**
 - Exibição do valor desejado e parcelas estimadas
 
-## 📄 Como rodar o projeto localmente
-1. Clone o repositório:
+## 📄 Documentação
+1. 
    ```bash
    git clone https://github.com/EmanuelSntos/Simulador-Emprestimo.git
 <img width="1918" height="982" alt="image" src="https://github.com/user-attachments/assets/46bde682-0254-4f5e-b01d-707727018b23" />
